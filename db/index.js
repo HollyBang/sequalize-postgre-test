@@ -7,4 +7,5 @@ const sequelize = new Sequelize('seqdb', 'sequser', 'admin', {
   port: 5432
 });
 
-export default  sequelize;
+
+module.exports = sequelize;

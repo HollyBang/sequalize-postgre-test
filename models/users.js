@@ -1,15 +1,16 @@
-import Sequelize from "sequelize";
-import sequelize from "../db";
+const Sequelize = require("sequelize");
+const sequelize = require("../db");
 
 const Model = Sequelize.Model;
 
-class User extends Model {}
-User.init({
+class Users extends Model {}
+Users.init({
   // attributes
   id: {
     type: Sequelize.INTEGER,
     allowNull: false,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
   },
   name: {
     type: Sequelize.STRING,
@@ -30,10 +31,11 @@ User.init({
   }
 }, {
   sequelize,
-  modelName: 'user',
+  modelName: 'users',
   timestamps: false
 });
 
-export default User;
+module.exports = Users;
+
 
 
